@@ -1,57 +1,66 @@
-@import 'variables';
-@import '~bootstrap/scss/bootstrap';
+@import "abstract/variables";
+@import "abstract/mixins";
 
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/solid';
+@import "base/animations";
 
-body{
-	font-family: Montserrat, Roboto, serif;
+@import "components/buttons";
+@import "components/forms";
+@import "components/card";
+
+// @import "~bootstrap/scss/bootstrap";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
 }
 
-.btn{
-	padding: 0.75rem 1rem;
+body {
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family:  "Ubuntu", sans-serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: $color-text;
 }
 
-.label {
-	font-size: 1em;
-	color: darken($black, 100%);
-	line-height: 1.5;
-	font-weight: 600;
-}
-.label-sm {
-	font-size: .875rem;
-	color: lighten($black, 10%);
-	line-height: 1.5;
-	font-weight: 500;
-}
-
-.form-group {
-	min-width: auto;
-	max-width: 100%;
-}
-
-.form-control {
-	font-size: 1.125em;
-	padding: 1.25em;
-	min-height: 3em;
+.active-link {
+  color: $color-text-dark;
+  background-color: $color-green;
 }
 
 a {
-	cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
 }
 
-.dropdown-menu-full{
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	min-height: 100vh;
-}
-
-.editor-container {
-	margin-bottom: 0.5rem;
-	*{
-		max-width: 100%;
-	}
-}
+//
+//.dropdown-menu-full {
+//  position: fixed;
+//  left: 0;
+//  top: 0;
+//  width: 100vw;
+//  min-height: 100vh;
+//}
+//
+//.editor-container {
+//  margin-bottom: 0.5rem;
+//  * {
+//    max-width: 100%;
+//  }
+//}

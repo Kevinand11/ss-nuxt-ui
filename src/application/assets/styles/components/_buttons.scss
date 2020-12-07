@@ -1,0 +1,48 @@
+.btn {
+  padding: 0.25rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  position: relative;
+  font-size: $default-font-size;
+  font-weight: bolder;
+  background-color: inherit;
+  color: $color-white;
+  cursor: pointer;
+}
+.btn-orange{
+  color: $color-white;
+  background-color: $color-orange;
+}
+.btn-green{
+  color: $color-white;
+  background-color: $color-green;
+}
+
+.btn-outline {
+  border: 1px solid;
+}
+.btn-text{
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+.btn-uppercase {
+  text-transform: uppercase;
+}
+.btn-icon {
+  color: $color-text-light;
+  background-color: $color-white;
+  border-radius: 20rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  &-icon {
+    // width: 1rem;
+    margin-top: 0.25rem;
+    height: 1rem;
+
+  }
+}

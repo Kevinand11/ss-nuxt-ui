@@ -1,6 +1,11 @@
 <template>
 	<div class="modal-background">
 		<div class="modal-inner">
+			<div class="modal-close">
+				<button class="modal-close-button">
+					<img src="/icons/close.svg" alt="" class="modal-close-button-img">
+				</button>
+			</div>
 			<slot name="header">
 				<h3>Header</h3>
 			</slot>
@@ -91,5 +96,17 @@ export default defineComponent({
 		height: auto;
 	}
 }
-
+.modal-close{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	&-button{
+		border: none;
+		background-color: inherit;
+		&-img{
+			width: 0.75rem;
+			height: 0.75rem;
+		}
+	}
+}
 </style>

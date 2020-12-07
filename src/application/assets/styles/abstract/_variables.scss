@@ -1,0 +1,29 @@
+$color-orange: #FF781F;
+$color-green: #81FF81;
+$color-text: #808080;
+$color-text-light: #CCCCCC;
+$color-text-light-trans:#00000019;
+$color-text-dark: #333333;
+$color-white: #fff;
+$color-black: #000;
+
+$color-background-grey: #FAFAFA;
+$color-border-grey: #E6E6E6;
+
+$default-font-size: 16px;
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$spacers: (
+	1: .5rem,
+	2: 1.0rem,
+	3: 1.5rem,
+	4: 2.0rem,
+	5: 2.5rem,
+	6: 3.0rem,
+	7: 3.5rem,
+	8: 4.0rem,
+);
