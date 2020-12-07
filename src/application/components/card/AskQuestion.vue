@@ -51,12 +51,10 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import Modal from '../core/modals/Modal'
-import BaseEditor from '../core/editor/BaseEditor'
 import AppSelect from '../base/AppSelect'
 export default defineComponent({
 	name: 'AskQuestion',
-	components: { AppSelect, Modal, BaseEditor },
+	components: { AppSelect },
 	data: () => ({
 		question: {
 			text: '',
@@ -66,7 +64,7 @@ export default defineComponent({
 	}),
 	methods: {
 		closeShowQuestionModal () {
-			this.$emit('closeModal')
+			this.$emit('close-modal')
 		},
 		submitQuestion () {
 			console.log('the question => ', this.question)

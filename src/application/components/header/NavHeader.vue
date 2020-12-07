@@ -1,47 +1,47 @@
 <template>
-  <div class="navbar-main">
-    <div class="navbar-left">
-      <Logo />
-    </div>
-    <div class="navbar-center">
-      <SearchBar />
-    </div>
-    <div class="navbar-right">
-      <div class="header-item">
-        <button class="header-btn btn btn-icon">
-          <img src="/icons/chat.svg" alt="messages" class="btn-icon-icon" />
-        </button>
-      </div>
-      <div class="header-item">
-        <button class="header-btn btn btn-icon">
-          <img src="/icons/users.svg" alt="profile" class="btn-icon-icon" />
-        </button>
-      </div>
-      <div class="header-item">
-        <button class="header-btn btn btn-icon">
-          <img
-            src="/icons/notification.svg"
-            alt="notifications"
-            class="btn-icon-icon"
-          />
-        </button>
-      </div>
-      <div class="header-item">
-        <button class="header-btn btn btn-icon">
-          <img src="/icons/logout.svg" alt="logout" class="btn-icon-icon" />
-        </button>
-      </div>
-    </div>
-  </div>
+	<div class="navbar-main">
+		<div class="navbar-left">
+			<Logo />
+		</div>
+		<div class="navbar-center">
+			<SearchBar />
+		</div>
+		<div class="navbar-right">
+			<div class="header-item">
+				<button class="header-btn btn btn-icon">
+					<img src="/icons/chat.svg" alt="messages" class="btn-icon-icon">
+				</button>
+			</div>
+			<div class="header-item">
+				<button class="header-btn btn btn-icon">
+					<img src="/icons/users.svg" alt="profile" class="btn-icon-icon">
+				</button>
+			</div>
+			<div class="header-item">
+				<button class="header-btn btn btn-icon">
+					<img
+						src="/icons/notification.svg"
+						alt="notifications"
+						class="btn-icon-icon"
+					>
+				</button>
+			</div>
+			<div class="header-item">
+				<button class="header-btn btn btn-icon">
+					<img src="/icons/logout.svg" alt="logout" class="btn-icon-icon">
+				</button>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
-import { defineComponent } from "@nuxtjs/composition-api";
-import Logo from "../Logo";
+import { defineComponent } from '@nuxtjs/composition-api'
+import Logo from '../Logo'
 export default defineComponent({
-  name: "NavHeader",
-  components: { Logo }
-});
+	name: 'NavHeader',
+	components: { Logo }
+})
 </script>
 
 <style lang="scss" scoped>

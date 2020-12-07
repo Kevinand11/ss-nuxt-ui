@@ -1,86 +1,87 @@
 <template>
-  <div class="answer">
-    <div class="q-answer">
-      <div class="q-answer__head">
-        <div class="q-answer__head--author">
-          <img
-              :src="answer.author.image"
-              alt="answer author image"
-              class="q-answer__head--author-img"
-          />
-          <span class="q-answer__head--author-name">{{
-          answer.author.name
-        }}</span>
-        </div>
-        <div class="q-answer__head--rating">
-          <StarRating
-              class=" px-2"
-              :rating="answer.rating"
-              :starStyle="answerReviewStyle"
-          />
-        </div>
-      </div>
-      <div class="q-answer__text">
-        <p  class="q-answer__text-main">{{ answer.text }}</p>
-      </div>
-    </div>
-    <div class="answer-comment">
-      <div v-for="comment in answer.comments" class="">
-        <p class="answer-comment__item">
-          <img :src="comment.author.image" alt="comment author" class="answer-comment__item-img">
-          <span class="answer-comment__item-text">{{ comment.text }}</span>
-        </p>
-      </div>
-    </div>
-    <div class="comment-field">
-      <form class="form" @submit.prevent="submitComment(answer)">
-        <div class="form__group">
-          <div class="append__btn">
-            <input type="text" placeholder="Add your comment..." class="form__input append__input">
-            <div
-                class="append__btn-icon"
-            >
-              <button type="submit" class="comment-btn btn btn-text" @click="submitComment(answer)">
-                <img
-                    src="/icons/comment.svg"
-                    alt=""
-                    class="append__btn-icon-img"
-                >
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
+	<div class="answer">
+		<div class="q-answer">
+			<div class="q-answer__head">
+				<div class="q-answer__head--author">
+					<img
+						:src="answer.author.image"
+						alt="answer author image"
+						class="q-answer__head--author-img"
+					>
+					<span class="q-answer__head--author-name">{{
+						answer.author.name
+					}}</span>
+				</div>
+				<div class="q-answer__head--rating">
+					<StarRating
+						class=" px-2"
+						:rating="answer.rating"
+						:star-style="answerReviewStyle"
+					/>
+				</div>
+			</div>
+			<div class="q-answer__text">
+				<p class="q-answer__text-main">
+					{{ answer.text }}
+				</p>
+			</div>
+		</div>
+		<div class="answer-comment">
+			<div v-for="comment in answer.comments" :key="comment.text" class="">
+				<p class="answer-comment__item">
+					<img :src="comment.author.image" alt="comment author" class="answer-comment__item-img">
+					<span class="answer-comment__item-text">{{ comment.text }}</span>
+				</p>
+			</div>
+		</div>
+		<div class="comment-field">
+			<form class="form" @submit.prevent="submitComment(answer)">
+				<div class="form__group">
+					<div class="append__btn">
+						<input type="text" placeholder="Add your comment..." class="form__input append__input">
+						<div
+							class="append__btn-icon"
+						>
+							<button type="submit" class="comment-btn btn btn-text" @click="submitComment(answer)">
+								<img
+									src="/icons/comment.svg"
+									alt=""
+									class="append__btn-icon-img"
+								>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-  name: "Answer",
-  props: {
-    answer: {
-      type: Object,
-      required: true
-    }
-  },
-  data: () => ({
-    answerReviewStyle: {
-      styleStarWidth: 32,
-      styleStarHeight: 32,
-      styleEmptyStarColor: "#FFC107",
-      styleFullStarColor: "#CCCCCC"
-    }
-  }),
-  methods: {
-    submitComment(answer){
-      console.log('yeah')
-    }
-  }
-});
+	name: 'Answer',
+	props: {
+		answer: {
+			type: Object,
+			required: true
+		}
+	},
+	data: () => ({
+		answerReviewStyle: {
+			styleStarWidth: 32,
+			styleStarHeight: 32,
+			styleEmptyStarColor: '#FFC107',
+			styleFullStarColor: '#CCCCCC'
+		}
+	}),
+	methods: {
+		submitComment (answer) {
+			console.log(answer)
+		}
+	}
+})
 </script>
 
 <style lang="scss" scoped>

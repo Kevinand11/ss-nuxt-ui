@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="question__body">
-			<div v-for="(question, index) in questions" class="">
+			<div v-for="(question, index) in questions" :key="index" class="">
 				<Question :question="question" class="question-card__question" />
 			</div>
 		</div>

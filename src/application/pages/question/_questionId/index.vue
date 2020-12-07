@@ -1,93 +1,93 @@
 <template>
-  <div class="single-question">
-    <div v-if="!$fetchState.pending && !$fetchState.error">
-      <NavHeader />
-      <div class="single-question__card card">
-        <Question :question="question" />
+	<div class="single-question">
+		<div v-if="!$fetchState.pending && !$fetchState.error">
+			<NavHeader />
+			<div class="single-question__card card">
+				<Question :question="question" />
 
-        <div class="single-question__answer">
-          <button
-            v-if="!question.answered"
-            class="single-question__answer-button btn btn-green"
-            @click="showAnswerForm"
-          >
-            Answer
-          </button>
-          <button v-else class="single-question__answer-button color-green btn btn-text">
-            Already Answered
-          </button>
-        </div>
-      </div>
-      <div v-if="question.answered" class="question-answer card">
-        <div class="question-answer__head">
-          Answers
-        </div>
-          <div class="">
-            <Answer :answer="question.answer" />
-          </div>
-      </div>
+				<div class="single-question__answer">
+					<button
+						v-if="!question.answered"
+						class="single-question__answer-button btn btn-green"
+						@click="showAnswerForm"
+					>
+						Answer
+					</button>
+					<button v-else class="single-question__answer-button color-green btn btn-text">
+						Already Answered
+					</button>
+				</div>
+			</div>
+			<div v-if="question.answered" class="question-answer card">
+				<div class="question-answer__head">
+					Answers
+				</div>
+				<div class="">
+					<Answer :answer="question.answer" />
+				</div>
+			</div>
 
-      <div  class="other-question card">
-        <div class="other-question__head">
-          <div class="other-question__head-text">Recent Questions</div>
-          <div class="other-question__head-input">
-            <AppSelect
-              :remote="false"
-              :options="[
-                'All Subjects',
-                'Mathematics',
-                'Chemistry',
-                'English',
-                'Physics'
-						  ]"
-              :default-value="'All Subjects'"
-            />
-          </div>
-        </div>
-        <div v-for="(question, index) in questions">
-          <div class="other-question__text">
-          {{ question.text }}
-          </div>
-        </div>
-        <div class="other-question__bottom">
-          <button class="other-question__bottom-btn btn btn-text">
-            LOAD MORE
-          </button>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
+			<div class="other-question card">
+				<div class="other-question__head">
+					<div class="other-question__head-text">
+						Recent Questions
+					</div>
+					<div class="other-question__head-input">
+						<AppSelect
+							:remote="false"
+							:options="[
+								'All Subjects',
+								'Mathematics',
+								'Chemistry',
+								'English',
+								'Physics'
+							]"
+							:default-value="'All Subjects'"
+						/>
+					</div>
+				</div>
+				<div v-for="(q, index) in questions" :key="index">
+					<div class="other-question__text">
+						{{ q.text }}
+					</div>
+				</div>
+				<div class="other-question__bottom">
+					<button class="other-question__bottom-btn btn btn-text">
+						LOAD MORE
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
-import { defineComponent } from "@vue/composition-api";
-import { mapGetters } from "vuex";
-import NavHeader from "@/components/header/NavHeader";
-import AppSelect from "@/components/base/AppSelect";
-import Answer from "@/components/Answer";
+import { defineComponent } from '@vue/composition-api'
+import { mapGetters } from 'vuex'
+import NavHeader from '@/components/header/NavHeader'
+import AppSelect from '@/components/base/AppSelect'
+import Answer from '@/components/Answer'
 export default defineComponent({
-  name: "SingleQuestionPage",
-  components:{ NavHeader, AppSelect, Answer },
-  data: () => ({
-    question: null,
-    answer: null,
-    showAnswerForm: false,
-  }),
+	name: 'SingleQuestionPage',
+	components: { NavHeader, AppSelect, Answer },
+	data: () => ({
+		question: null,
+		answer: null,
+		showAnswerForm: false
+	}),
 
-  computed: {
-    ...mapGetters({
-      questions: "questionStore/questions",
-      getQuestion: "questionStore/getQuestionById"
-    })
-  },
-  fetch() {
-    const questionId = this.$route.params.questionId;
-    this.question = this.getQuestion(questionId);
-    this.showAnswerForm = this.question.answered !== null;
-  }
-});
+	fetch () {
+		const questionId = this.$route.params.questionId
+		this.question = this.getQuestion(questionId)
+		this.showAnswerForm = this.question.answered !== null
+	},
+	computed: {
+		...mapGetters({
+			questions: 'questionStore/questions',
+			getQuestion: 'questionStore/getQuestionById'
+		})
+	}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -114,7 +114,6 @@ export default defineComponent({
     &-button {
       font-size: 1.25rem;
       padding: 0.5rem 2rem;
-
 
     }
   }

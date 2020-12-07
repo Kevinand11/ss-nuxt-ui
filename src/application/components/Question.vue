@@ -44,7 +44,9 @@
 			</div>
 		</div>
 		<div class="question__text" @click="goToQuestion(question.id)">
-			<p class="question__text-main">{{ question.text }}</p>
+			<p class="question__text-main">
+				{{ question.text }}
+			</p>
 		</div>
 	</div>
 </template>
@@ -67,7 +69,7 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		goToQuestion(questionID){
+		goToQuestion (questionID) {
 			this.$router.push(`/question/${questionID}`)
 		}
 	}

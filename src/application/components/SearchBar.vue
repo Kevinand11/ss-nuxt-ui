@@ -1,52 +1,52 @@
 <template>
-  <div class="searchbar">
-    <form class="form" @submit.prevent="search">
-      <div class="form__group">
-        <div class="append__btn">
-          <input
-              v-model="searchItem"
-              class="form__input append__input"
-              :placeholder="placeholder"
-          />
-          <div
-              class="append__btn-icon"
-              @click="search"
-          >
-            <button class="search-btn btn btn-icon">
-            <img
-                src="/icons/search-icon.svg"
-                alt=""
-                class="append__btn-icon-img"
-            >
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+	<div class="searchbar">
+		<form class="form" @submit.prevent="search">
+			<div class="form__group">
+				<div class="append__btn">
+					<input
+						v-model="searchItem"
+						class="form__input append__input"
+						:placeholder="placeholder"
+					>
+					<div
+						class="append__btn-icon"
+						@click="search"
+					>
+						<button class="search-btn btn btn-icon">
+							<img
+								src="/icons/search-icon.svg"
+								alt=""
+								class="append__btn-icon-img"
+							>
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 </template>
 
 <script>
-  import {defineComponent} from "@nuxtjs/composition-api";
+import { defineComponent } from '@nuxtjs/composition-api'
 
-  export default defineComponent({
-    name: "SearchBar",
-    props: {
-      placeholder: {
-        type: String,
-        default: 'Search for anything'
-      }
-    },
-    data() {
-      return {
-        searchItem: ''
-      }
-    },
-    methods: {
-      search() {
-      }
-    }
-  })
+export default defineComponent({
+	name: 'SearchBar',
+	props: {
+		placeholder: {
+			type: String,
+			default: 'Search for anything'
+		}
+	},
+	data () {
+		return {
+			searchItem: ''
+		}
+	},
+	methods: {
+		search () {
+		}
+	}
+})
 </script>
 
 <style lang="scss" scoped>

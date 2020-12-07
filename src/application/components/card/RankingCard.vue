@@ -17,7 +17,7 @@
 						/>
 					</div>
 				</div>
-				<div v-for="(topFive, index) in topRankers" class="ranking__item">
+				<div v-for="(topFive, index) in topRankers" :key="index" class="ranking__item">
 					<div class="ranking__item--user">
 						<img
 							:src="topFive.profileImage"

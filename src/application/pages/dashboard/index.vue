@@ -27,9 +27,9 @@
 		<div class="dashboard-right">
 			<SidebarRight />
 		</div>
-		<div v-if="this.showAskQuestionModal" class="">
+		<div v-if="showAskQuestionModal" class="">
 			<AskQuestion
-					@closeModal="closeAskQuestionModal"
+				@closeModal="closeAskQuestionModal"
 			/>
 		</div>
 	</div>
@@ -40,7 +40,7 @@ import { defineComponent } from '@nuxtjs/composition-api'
 import DashboardMenu from '@/components/menus/DashboardMenu'
 import SidebarRight from '@/components/menus/SidebarRight'
 import AskQuestion from '@/components/card/AskQuestion'
-import DashboardHeader from "@/components/header/DashboardHeader";
+import DashboardHeader from '@/components/header/DashboardHeader'
 export default defineComponent({
 	name: 'DashboardIndex',
 	components: {
